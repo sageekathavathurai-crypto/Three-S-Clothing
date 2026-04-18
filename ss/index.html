@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THREE S — Wear Your Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/image/Logo.jpeg">
+
+<meta name="description" content="Three S Clothing - Premium Polo Ralph Lauren, Tommy Hilfiger & GAP shirts in Sri Lanka. 100% authentic, affordable LKR pricing, WhatsApp ordering available.">
+
+<meta name="keywords" content="Three S Clothing, Polo shirts Sri Lanka, Tommy Hilfiger Sri Lanka, GAP shirts Sri Lanka, branded shirts Colombo, premium shirts Jaffna, WhatsApp clothing Sri Lanka">
+
+<meta name="author" content="Three S Clothing">
+
+<link rel="canonical" href="https://yourdomain.com/">
+
+<meta property="og:title" content="Three S Clothing - Premium Branded Shirts Sri Lanka">
+<meta property="og:description" content="Shop Polo, Tommy Hilfiger & GAP shirts in Sri Lanka with WhatsApp ordering">
+<meta property="og:image" content="https://yourdomain.com/image/Logo.jpeg">
+<meta property="og:type" content="website">
+
+
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<svg style="display:none"><symbol id="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></symbol></svg>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img class="nav-logo-img" src="image/Logo.jpeg" alt="Three S Clothing">
+    <span class="nav-logo-text">THREE <span>S</span></span>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#products" onclick="closeMenu()">Collection</a></li>
+    <li><a href="#about" onclick="closeMenu()">Atelier</a></li>
+    <li><a href="#why" onclick="closeMenu()">Philosophy</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a class="nav-wa" href="https://wa.me/94760920885?text=Hi%20Three%20S%20Clothing!%20I%27d%20like%20to%20order." target="_blank" rel="noopener">
+      <svg width="12" height="12" fill="currentColor"><use href="#wa-icon"/></svg>Order Now
+    </a>
+    <button type="button" class="nav-cart" onclick="openCart()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+       <span class="count" id="cartCount">0</span>
+    </button>
+    <button type="button" class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background-image:url('image/hero1.jpg')"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-shimmer"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-accent-bar"></div>
+    <h1 class="hero-title">THREE<span class="cool-word">S</span></h1>
+    <p class="hero-sub">Wear Your Style</p>
+    <p class="hero-desc">Polo Ralph Lauren · Tommy Hilfiger · GAP · LKR Pricing</p>
+    <div class="hero-cta">
+      <a href="#products" class="btn-primary">Explore Collection</a>
+      <a href="https://wa.me/94760920885?text=Hi%20Three%20S%20Clothing!%20I%27d%20like%20to%20browse%20and%20order." target="_blank" rel="noopener" class="btn-wa">
+        <svg width="14" height="14" fill="currentColor"><use href="#wa-icon"/></svg>Order via WhatsApp
+      </a>
+      <a href="#about" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Discover</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">THREE S CLOTHING <span class="m-g">◆</span> WEAR YOUR STYLE <span class="m-b">◆</span> POLO RALPH LAUREN <span class="m-g">◆</span> TOMMY HILFIGER <span class="m-b">◆</span> GAP <span class="m-g">◆</span> WHATSAPP ORDERS <span class="m-b">◆</span> 076 092 0885 <span class="m-g">◆</span> LKR PRICING <span class="m-b">◆</span> Colombo, SRI LANKA <span class="m-g">◆</span> 100% AUTHENTIC <span class="m-b">◆</span>&nbsp;THREE S CLOTHING <span class="m-g">◆</span> WEAR YOUR STYLE <span class="m-b">◆</span> POLO RALPH LAUREN <span class="m-g">◆</span> TOMMY HILFIGER <span class="m-b">◆</span> GAP <span class="m-g">◆</span> WHATSAPP ORDERS <span class="m-b">◆</span> 076 092 0885 <span class="m-g">◆</span> LKR PRICING <span class="m-b">◆</span> JAFFNA, SRI LANKA <span class="m-g">◆</span> 100% AUTHENTIC <span class="m-b">◆</span>&nbsp;</div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div><p class="section-eyebrow">The Collection</p><h2 class="section-title">Premium <em>Shirts</em></h2></div>
+    <div class="filter-tabs">
+      <button type="button" class="filter-tab active" onclick="filterProducts('all',this)">All</button>
+      <button type="button" class="filter-tab" onclick="filterProducts('polo',this)">Polo</button>
+      <button type="button" class="filter-tab" onclick="filterProducts('tommy',this)">Tommy</button>
+      <button type="button" class="filter-tab" onclick="filterProducts('gap',this)">GAP</button>
+    </div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- ====================================================
+         POLO 1
+         IMAGE: மாற்றி "image/polo-navy.jpg" போடவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="polo">
+      <div class="product-img">
+        <!-- 🖼️ உங்கள் photo path இங்கே மாற்றவும் → src="image/polo-navy.jpg" -->
+        <img src="image/po1.png"
+             alt="Polo Classic Navy"
+             onerror="this.src='https://placehold.co/400x533/ddd8cc/1A1A2E?text=Polo+Classic+Navy'">
+        <span class="product-badge">Bestseller</span>
+        
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Polo Ralph Lauren</p>
+        <h3 class="product-name">Classic Navy Polo</h3>
+        <p class="product-desc">Premium piqué cotton, embroidered logo, timeless relaxed fit.</p>
+        <!-- Size selector in card -->
+        <div class="size-selector" id="sizes-polo1"></div>
+        <span class="selected-size-note" id="note-polo1"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 4,500 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('polo1','Polo Classic Navy','Polo',4500,'👔')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('polo1','Polo Classic Navy','Rs. 4,500')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         POLO 2
+         IMAGE: src="image/polo-black.jpg" ஆக மாற்றவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="polo">
+      <div class="product-img">
+        <img src="image/po2.png"
+             alt="Polo Slim Fit Black"
+             onerror="this.src='https://placehold.co/400x533/1A1A2E/C9A84C?text=Polo+Slim+Fit+Black'">
+        
+          
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Polo Ralph Lauren</p>
+        <h3 class="product-name">Slim Fit Black</h3>
+        <p class="product-desc">Stretch cotton blend, sleek silhouette, refined for formal occasions.</p>
+        <div class="size-selector" id="sizes-polo2"></div>
+        <span class="selected-size-note" id="note-polo2"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 4,800 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('polo2','Polo Slim Fit Black','Polo',4800,'🖤')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('polo2','Polo Slim Fit Black','Rs. 4,800')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TOMMY 1
+         IMAGE: src="image/tommy-classic.jpg" ஆக மாற்றவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="tommy">
+      <div class="product-img">
+        <img src="image/to1.png"
+             alt="Tommy Heritage Classic"
+             onerror="this.src='https://placehold.co/400x533/c8d8e8/1A1A2E?text=Tommy+Heritage+Classic'">
+        <span class="product-badge new-badge">New</span>
+        
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Tommy Hilfiger</p>
+        <h3 class="product-name">Heritage Classic</h3>
+        <p class="product-desc">Iconic preppy style, soft cotton twill, relaxed modern cut.</p>
+        <div class="size-selector" id="sizes-tommy1"></div>
+        <span class="selected-size-note" id="note-tommy1"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 5,200 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('tommy1','Tommy Heritage Classic','Tommy',5200,'👕')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('tommy1','Tommy Heritage Classic','Rs. 5,200')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TOMMY 2
+         IMAGE: src="image/tommy-stripe.jpg" ஆக மாற்றவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="tommy">
+      <div class="product-img">
+        <img src="image/to2.png"
+             alt="Tommy Stripe Oxford"
+             onerror="this.src='https://placehold.co/400x533/e8d4b0/1A1A2E?text=Tommy+Stripe+Oxford'">
+        
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Tommy Hilfiger</p>
+        <h3 class="product-name">Stripe Oxford</h3>
+        <p class="product-desc">Oxford weave, bold stripe accent, button-down collar, chest pocket.</p>
+        <div class="size-selector" id="sizes-tommy2"></div>
+        <span class="selected-size-note" id="note-tommy2"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 5,500 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('tommy2','Tommy Stripe Oxford','Tommy',5500,'👔')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('tommy2','Tommy Stripe Oxford','Rs. 5,500')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         GAP 1
+         IMAGE: src="image/gap-crew.jpg" ஆக மாற்றவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="gap">
+      <div class="product-img">
+        <img src="image/gap1.png"
+             alt="GAP Essential Crewneck"
+             onerror="this.src='https://placehold.co/400x533/e8e4dc/1A1A2E?text=GAP+Essential+Crewneck'">
+        <span class="product-badge">Limited</span>
+        
+      </div>
+      <div class="product-info">
+        <p class="product-brand">GAP</p>
+        <h3 class="product-name">Essential Crewneck</h3>
+        <p class="product-desc">100% supima cotton, classic crew, versatile everyday elegance.</p>
+        <div class="size-selector" id="sizes-gap1"></div>
+        <span class="selected-size-note" id="note-gap1"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 3,800 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('gap1','GAP Essential Crewneck','GAP',3800,'👕')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('gap1','GAP Essential Crewneck','Rs. 3,800')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         GAP 2
+         IMAGE: src="image/gap-oxford.jpg" ஆக மாற்றவும்
+         ==================================================== -->
+    <div class="product-card fade-up" data-category="gap">
+      <div class="product-img">
+        <img src="image/gap2.png"
+             alt="GAP Relaxed Oxford"
+             onerror="this.src='https://placehold.co/400x533/C9A84C/1A1A2E?text=GAP+Relaxed+Oxford'">
+        
+      </div>
+      <div class="product-info">
+        <p class="product-brand">GAP</p>
+        <h3 class="product-name">Relaxed Oxford</h3>
+        <p class="product-desc">Relaxed fit Oxford cloth, button-down collar, effortless elegance.</p>
+        <div class="size-selector" id="sizes-gap2"></div>
+        <span class="selected-size-note" id="note-gap2"></span>
+        <div class="product-footer">
+          <div class="product-price">Rs. 4,200 <small>LKR</small></div>
+          <div class="product-actions">
+            <button type="button" class="btn-cart-sm" onclick="addToCartWithSize('gap2','GAP Relaxed Oxford','GAP',4200,'✨')">Cart</button>
+            <button type="button" class="btn-wa-sm" onclick="waOrderWithSize('gap2','GAP Relaxed Oxford','Rs. 4,200')">
+              <svg width="11" height="11" fill="currentColor"><use href="#wa-icon"/></svg>Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /products-grid -->
+</section>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="brand-title">
+    <span>T</span><span>H</span><span>R</span><span>E</span><span>E</span>
+    <span>&nbsp;</span>
+    <span>S</span>
+    <span>&nbsp;</span>
+    <span>C</span><span>L</span><span>O</span><span>T</span><span>H</span><span>I</span><span>N</span><span>G</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="./image/hero.mp4" type="video/mp4">
+    </video>
+    <div class="gold-particles"></div>
+    <div class="gold-wave"></div>
+    <div class="about-overlay"></div>
+  </div>
+  <div class="about-content fade-up">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">Crafted for the <em>Modern</em> Individual</h2>
+    <p>Three S Clothing was founded on a singular belief: <strong>style is personal</strong>. We curate premium shirts from the world's most respected brands — Polo Ralph Lauren, Tommy Hilfiger, and GAP — bringing them directly to you.</p>
+    <p>Every piece is <strong>hand-selected</strong> for quality, fit, and lasting appeal. We curate classics that transcend seasons and speak to those who know the difference between fashion and true style.</p>
+    <p>Based in <strong>Jaffna, Sri Lanka</strong>, we bring global quality to your doorstep — with easy WhatsApp ordering, fast delivery, and a commitment to authenticity. All prices in <strong>LKR</strong>.</p>
+    <div class="about-stats">
+      <div class="stat-box"><div class="stat-num">500<span>+</span></div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Premium Brands</div></div>
+      <div class="stat-box"><div class="stat-num">100<span>%</span></div><div class="stat-label">Authentic</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="why-glow"></div>
+  <p class="section-eyebrow">Our Philosophy</p>
+  <h2 class="section-title">The Three S <em>Promise</em></h2>
+  <div class="why-grid">
+    <div class="why-card fade-up"><div class="why-num">01</div><div class="why-icon-wrap">◆</div><div class="why-title">100% Authentic</div><div class="why-desc">Every shirt is genuine — sourced directly from trusted suppliers. No replicas, no compromises, ever.</div></div>
+    <div class="why-card fade-up"><div class="why-num">02</div><div class="why-icon-wrap">◈</div><div class="why-title">WhatsApp First</div><div class="why-desc">Order in seconds. Message us for instant replies, sizing help, and hassle-free ordering in LKR.</div></div>
+    <div class="why-card fade-up"><div class="why-num">03</div><div class="why-icon-wrap">◇</div><div class="why-title">Fast Delivery</div><div class="why-desc">Quick dispatch across Sri Lanka. Your premium shirt arrives at your door with exceptional care.</div></div>
+    <div class="why-card fade-up"><div class="why-num">04</div><div class="why-icon-wrap">◉</div><div class="why-title">LKR Pricing</div><div class="why-desc">Clear, transparent pricing in Sri Lankan Rupees. No hidden charges, no surprises ever.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-eyebrow">Get in Touch</p>
+  <h2 class="section-title">We'd Love to <em>Hear</em> From You</h2>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h3>Reach Us Anytime</h3>
+      <p>Questions about sizing, availability, or delivery? The fastest way to order is via WhatsApp — we reply instantly.</p>
+      <div class="contact-detail">
+        <div class="contact-item"><div class="ci-icon">📍</div><div><strong>Location</strong>Colombo, Sri Lanka</div></div>
+        <div class="contact-item"><div class="ci-icon">📞</div><div><strong>WhatsApp / Call</strong><a href="https://wa.me/94760920885">076 092 0885</a></div></div>
+        <div class="contact-item"><div class="ci-icon">✉️</div><div><strong>Email</strong><a href="mailto:threesclothing2025@gmail.com">threesclothing2025@gmail.com</a></div></div>
+        <div class="contact-item"><div class="ci-icon">⏰</div><div><strong>Hours</strong>Monday – Sunday, 24/7</div></div>
+      </div>
+      <div class="wa-box">
+        <div class="wa-box-text"><strong>⚡ Fastest way to order!</strong><br>Chat on WhatsApp for instant replies, sizing help, and easy ordering in LKR.</div>
+        <a class="wa-box-btn" href="https://wa.me/94760920885?text=Hi%20Three%20S%20Clothing!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener"><svg width="13" height="13" fill="currentColor"><use href="#wa-icon"/></svg>Chat on WhatsApp Now</a>
+      </div>
+    </div>
+    <form class="contact-form fade-up" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Your name" required></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Last name" required></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="femail" placeholder="you@email.com" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" id="fphone" placeholder="07X XXX XXXX"></div>
+        <div class="form-group"><label>Topic</label><select id="fsubject"><option value="">Select…</option><option>Product Inquiry</option><option>Order Assistance</option><option>Sizing Help</option><option>Delivery Info</option><option>Other</option></select></div>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="fmessage" placeholder="Tell us how we can help…" required></textarea></div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Send Message</button>
+        <span class="form-note">Or: <a href="mailto:threesclothing2025@gmail.com">threesclothing2025@gmail.com</a></span>
+      </div>
+      <div class="form-success" id="formSuccess">◆ Message sent — we'll reply within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<a href="https://wa.me/94760920885" target="_blank" class="wa-orb">
+    <span class="wa-ring"></span>
+    <span class="wa-core">
+        <i class="fab fa-whatsapp"></i>
+    </span>
+    <span class="wa-label">Chat with us</span>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-gradient-line"></div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-wrap"><img class="footer-logo-img" src="image/Logo.jpeg" alt="Three S Clothing"><div class="footer-brand">THREE <span>S</span></div></div>
+      <p class="footer-tagline">Premium shirts curated for those who understand the language of style. colombo, Sri Lanka — all prices in LKR.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/three_s_clothing_2025" target="_blank" class="social-link ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61583186672360" target="_blank" class="social-link fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://tiktok.com/@three.s.clothing" target="_blank" class="social-link tt"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Collection</h3><ul><li><a href="#products">Polo Shirts</a></li><li><a href="#products">Tommy Hilfiger</a></li><li><a href="#products">GAP Collection</a></li><li><a href="#products">New Arrivals</a></li></ul></div>
+    <div class="footer-col"><h3>Order</h3><ul><li><a href="https://wa.me/94760920885" target="_blank">WhatsApp Order</a></li><li><a href="mailto:threesclothing2025@gmail.com">Email Order</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Delivery Info</a></li></ul></div>
+    <div class="footer-col"><h3>Contact</h3><ul><li><a href="https://wa.me/94760920885">076 092 0885</a></li><li><a href="mailto:threesclothing2025@gmail.com">threesclothing2025@gmail.com</a></li><li><a href="#contact">Colombo, Sri Lanka</a></li><li><a href="#contact">Send a Message</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Three S Clothing · Colombo, Sri Lanka. All rights reserved.</span><span>WhatsApp: 076 092 0885 · Wear Your Style</span></div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header"><h2>Your Cart</h2><button type="button" class="cart-close" onclick="closeCart()">Close ✕</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty"><div class="cart-empty-icon">◻</div><p>Your cart is empty</p></div></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total"><span>Total (LKR)</span><span class="cart-total-amt" id="cartTotal">Rs. 0</span></div>
+    <button type="button" class="cart-wa-btn" onclick="waCartCheckout()"><svg width="15" height="15" fill="currentColor"><use href="#wa-icon"/></svg>Order via WhatsApp</button>
+    <div class="cart-divider">— or —</div>
+    <button type="button" class="cart-email-btn" onclick="emailCartCheckout()">Send Order by Email</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   AVAILABLE SIZES per product
+   Out-of-stock sizes: add to the outOfStock array
+   ============================================================ */
+const PRODUCTS = {
+  'polo1':  { sizes: ['S','M','L','XL','XXL'], outOfStock: [] },
+  'polo2':  { sizes: ['S','M','L','XL','XXL'], outOfStock: ['S'] },
+  'tommy1': { sizes: ['S','M','L','XL','XXL'], outOfStock: [] },
+  'tommy2': { sizes: ['S','M','L','XL','XXL'], outOfStock: ['XXL'] },
+  'gap1':   { sizes: ['S','M','L','XL','XXL'], outOfStock: [] },
+  'gap2':   { sizes: ['S','M','L','XL','XXL'], outOfStock: ['S','M'] },
+};
+
+/* selected size state */
+const selectedSizes = {};
+
+/* ============================================================
+   INIT SIZE BUTTONS
+   ============================================================ */
+function initSizes() {
+  Object.keys(PRODUCTS).forEach(pid => {
+    const p = PRODUCTS[pid];
+
+    // Card-level size buttons
+    const container = document.getElementById('sizes-' + pid);
+    if (container) {
+      const label = document.createElement('span');
+      label.className = 'size-label';
+      label.textContent = 'Size:';
+      container.appendChild(label);
+
+      p.sizes.forEach(sz => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'size-btn' + (p.outOfStock.includes(sz) ? ' out-of-stock' : '');
+        btn.textContent = sz;
+        btn.dataset.pid = pid;
+        btn.dataset.size = sz;
+        if (!p.outOfStock.includes(sz)) {
+          btn.onclick = () => selectSize(pid, sz);
+        }
+        container.appendChild(btn);
+      });
+    }
+
+    // Overlay size pills
+    const ovContainer = document.getElementById('ov-sizes-' + pid);
+    if (ovContainer) {
+      p.sizes.forEach(sz => {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = 'ov-size-pill' + (p.outOfStock.includes(sz) ? ' out-of-stock' : '');
+        pill.textContent = sz;
+        if (!p.outOfStock.includes(sz)) {
+          pill.onclick = (e) => { e.stopPropagation(); selectSize(pid, sz); };
+        }
+        pill.dataset.pid = pid;
+        pill.dataset.size = sz;
+        ovContainer.appendChild(pill);
+      });
+    }
+  });
+}
+
+function selectSize(pid, sz) {
+  selectedSizes[pid] = sz;
+
+  // Update card buttons
+  document.querySelectorAll(`.size-btn[data-pid="${pid}"]`).forEach(b => {
+    b.classList.toggle('selected', b.dataset.size === sz);
+  });
+
+  // Update overlay pills
+  document.querySelectorAll(`.ov-size-pill[data-pid="${pid}"]`).forEach(b => {
+    b.classList.toggle('selected', b.dataset.size === sz);
+  });
+
+  // Update note
+  const note = document.getElementById('note-' + pid);
+  if (note) note.textContent = `Selected: ${sz}`;
+}
+
+function getSelectedSize(pid) {
+  return selectedSizes[pid] || null;
+}
+
+/* ============================================================
+   MOBILE CHECK
+   ============================================================ */
+const isMobile = ('ontouchstart' in window) ||
+                 (navigator.maxTouchPoints > 0) ||
+                 window.matchMedia('(max-width:768px)').matches;
+
+/* CURSOR — desktop only */
+const cur  = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+if (!isMobile) {
+  let mx=0, my=0, rx=0, ry=0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px';
+    cur.style.top  = my + 'px';
+  });
+  (function anim() {
+    rx += (mx - rx) * .1;
+    ry += (my - ry) * .1;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cur.style.width='14px'; cur.style.height='14px';
+      cur.style.background='transparent';
+      cur.style.border='1px solid var(--gold-bright)';
+      ring.style.width='52px'; ring.style.height='52px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cur.style.width='7px'; cur.style.height='7px';
+      cur.style.background='var(--gold-bright)';
+      cur.style.border='none';
+      ring.style.width='34px'; ring.style.height='34px';
+    });
+  });
+}
+
+/* PARTICLES */
+(function(){
+  const c    = document.getElementById('particles');
+  const cols = ['rgba(201,168,76,.5)','rgba(232,201,106,.45)','rgba(255,235,150,.35)','rgba(168,136,48,.5)'];
+  for(let i=0;i<18;i++){
+    const p = document.createElement('div'); p.className='particle';
+    const s = Math.random()*2+.7, col=cols[Math.floor(Math.random()*cols.length)];
+    Object.assign(p.style,{
+      width:s+'px',height:s+'px',left:Math.random()*100+'%',
+      background:col,
+      animationDuration:(Math.random()*14+8)+'s',
+      animationDelay:(Math.random()*14)+'s'
+    });
+    c.appendChild(p);
+  }
+})();
+
+/* NAVBAR SCROLL */
+window.addEventListener('scroll', () =>
+  document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60)
+);
+
+/* MOBILE MENU */
+function toggleMenu() {
+  const menu    = document.getElementById('navLinks');
+  const btn     = document.getElementById('menuToggle');
+  const overlay = document.getElementById('mobileOverlay');
+  const isOpen  = menu.classList.contains('open');
+  if (isOpen) {
+    menu.classList.remove('open');
+    btn.classList.remove('active');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  } else {
+    menu.classList.add('open');
+    btn.classList.add('active');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeMenu() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('menuToggle').classList.remove('active');
+  document.getElementById('mobileOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* WHATSAPP */
+const WA    = '94760920885';
+const waUrl = m => `https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+
+function waOrderWithSize(pid, name, price) {
+  const sz = getSelectedSize(pid);
+  const sizeText = sz ? `\nSize: *${sz}*` : '\nSize: (please specify S/M/L/XL/XXL)';
+  window.open(waUrl(
+    `Hi Three S Clothing! 👋\n\nI'd like to order:\n\n*${name}*\nPrice: ${price} LKR${sizeText}\n\nPlease confirm availability and delivery. Thank you!`
+  ), '_blank');
+}
+
+/* CART */
+let cart = [];
+function openCart()  {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function addToCartWithSize(pid, name, brand, price, emoji) {
+  const sz = getSelectedSize(pid);
+  if (!sz) {
+    showToast('⚠ Please select a size first!');
+    // Highlight the size buttons
+    const container = document.getElementById('sizes-' + pid);
+    if (container) {
+      container.style.animation = 'none';
+      container.offsetHeight; // reflow
+      container.querySelectorAll('.size-btn:not(.out-of-stock)').forEach(b => {
+        b.style.borderColor = 'var(--gold-bright)';
+        b.style.color = 'var(--gold-bright)';
+        setTimeout(() => { b.style.borderColor=''; b.style.color=''; }, 1200);
+      });
+    }
+    return;
+  }
+  const key = name + '|' + sz;
+  const ex = cart.find(i => i.key === key);
+  ex ? ex.qty++ : cart.push({key, name, brand, price, emoji, qty:1, size:sz});
+  updateCart();
+  showToast(`◆ ${name} (${sz}) added to cart`);
+}
+
+function removeFromCart(i) { cart.splice(i,1); updateCart(); }
+
+function updateCart() {
+  document.getElementById('cartCount').textContent = cart.reduce((s,i)=>s+i.qty,0);
+  const el = document.getElementById('cartItems');
+  const ft = document.getElementById('cartFooter');
+  if (!cart.length) {
+    el.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">◻</div><p>Your cart is empty</p></div>';
+    ft.style.display = 'none'; return;
+  }
+  ft.style.display = 'flex';
+  el.innerHTML = cart.map((it,i) =>
+    `<div class="cart-item">
+      <div class="ci-thumb">${it.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-brand">${it.brand}</div>
+        <div class="ci-name">${it.name}</div>
+        <div class="ci-price">Size: <strong>${it.size}</strong> &nbsp;|&nbsp; Rs. ${it.price.toLocaleString()} × ${it.qty}</div>
+      </div>
+      <button type="button" class="ci-remove" onclick="removeFromCart(${i})">✕</button>
+    </div>`
+  ).join('');
+  document.getElementById('cartTotal').textContent =
+    `Rs. ${cart.reduce((s,i)=>s+i.price*i.qty,0).toLocaleString()}`;
+}
+
+function waCartCheckout() {
+  if (!cart.length) return;
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  window.open(waUrl(
+    `Hi Three S Clothing! 👋\n\nMy Order:\n\n` +
+    cart.map(i=>`  • ${i.name} (Size: ${i.size}) × ${i.qty} — Rs. ${(i.price*i.qty).toLocaleString()}`).join('\n') +
+    `\n\n*Total: Rs. ${total.toLocaleString()} LKR*\n\nPlease confirm. Thank you!`
+  ), '_blank');
+  closeCart();
+}
+
+function emailCartCheckout() {
+  if (!cart.length) return;
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  window.location.href =
+    `mailto:threesclothing2025@gmail.com?subject=${encodeURIComponent('Order from Three S Clothing')}` +
+    `&body=${encodeURIComponent(
+      `Order:\n\n${cart.map(i=>`${i.name} (Size: ${i.size}) × ${i.qty} — Rs. ${(i.price*i.qty).toLocaleString()}`).join('\n')}\n\nTotal: Rs. ${total.toLocaleString()} LKR`
+    )}`;
+  closeCart();
+}
+
+/* FILTER */
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(c => {
+    c.style.display = (cat==='all' || c.dataset.category===cat) ? '' : 'none';
+  });
+}
+
+/* CONTACT FORM */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn   = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  const name  = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
+  const email = document.getElementById('femail').value;
+  const msg   = document.getElementById('fmessage').value;
+  setTimeout(() => {
+    window.location.href =
+      `mailto:threesclothing2025@gmail.com?subject=${encodeURIComponent(`Message from ${name}`)}` +
+      `&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${msg}`)}`;
+    btn.textContent = 'Send Message'; btn.disabled = false;
+    document.getElementById('formSuccess').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => document.getElementById('formSuccess').style.display='none', 5000);
+  }, 600);
+}
+
+/* TOAST */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* SCROLL ANIMATIONS */
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+  {threshold: .1}
+);
+document.querySelectorAll('.fade-up,.product-card').forEach(el => obs.observe(el));
+
+/* INIT */
+document.addEventListener('DOMContentLoaded', initSizes);
+</script>
+</body>
+</html>
